@@ -4,7 +4,8 @@
   "description": "mocha testing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
+    "test": "mocha 0-calcul.test.js"
   },
   "repository": {
     "type": "git",
@@ -16,11 +17,17 @@
   "author": "Dominic Sengo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Domengo/alx-backend-javascript/issues"
+    "url": "https://github.com/Domengo/alx-backend-javascript/issues",
+    "email": "dominicsengo@gmail.com"
   },
   "homepage": "https://github.com/Domengo/alx-backend-javascript#readme",
   "devDependencies": {
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "eslint": "^7.29.0",
+    "chai": "^4.3.4",
+    "express": "^4.18.2",
+    "sinon": "^15.1.2",
+    "request": "2.88.0"
 }
 
 }
