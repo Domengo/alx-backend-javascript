@@ -1,0 +1,26 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "mocha testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domengo/alx-backend-javascript.git"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "Dominic Sengo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Domengo/alx-backend-javascript/issues"
+  },
+  "homepage": "https://github.com/Domengo/alx-backend-javascript#readme",
+  "devDependencies": {
+    "mocha": "^8.2.1"
+}
+
+}
