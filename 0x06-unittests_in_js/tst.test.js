@@ -1,20 +1,10 @@
 const sinon = require('sinon');
-const assert = require('assert');
 
-// The function to be spied on
-function myFunction() {
-  return 1 + 8;
-}
+// Create a stub
+const myStub = sinon.stub();
 
-// Creating a spy
-const spy = sinon.spy(myFunction);
+// Configure the stub's behavior
+myStub.returns('Stubbed response');
 
-// Calling the spied function
-spy();
-
-// Verifying the spy
-assert(spy.calledOnce, 'The function was not called once.');
-assert(
-  spy.calledWithExactly(),
-  'The function was not called with the expected arguments.',
-);
+// Use the stub in your test
+console.log(myStub());// Output: 'Stubbed response'
