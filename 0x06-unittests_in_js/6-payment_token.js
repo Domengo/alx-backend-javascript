@@ -1,12 +1,9 @@
-/* eslint-disable no-unused-vars */
 function getPaymentTokenFromAPI(success) {
-  return new Promise((resolve, reject) => {
-    if (success) {
-      resolve({ data: 'Successful response from the API' });
-    } else {
-      resolve();
-    }
-  });
+  if (success) {
+    return new Promise((resolve) => {
+      resolve({ data: "Successful response from the API" });
+    });
+  }
 }
 
 module.exports = getPaymentTokenFromAPI;
