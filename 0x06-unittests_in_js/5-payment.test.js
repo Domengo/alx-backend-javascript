@@ -8,27 +8,23 @@ const { expect } = require('chai');
 const sendPaymentRequestToApi = require('./5-payment');
 
 describe('sendPaymentRequestToAPI', () => {
-  let beforAfter;
-
-  beforeEach(() => {
-    if (!beforAfter) {
-      beforAfter = sinon.spy(console);
-    }
+  beforeEach('setting up spy for each test', () => {
+    sinon.spy(console, 'log');
   });
 
-  afterEach(() => {
-    beforAfter.log.resetHistory();
+  afterEach('restore spy after each test', () => {
+    console.log.restore();
   });
 
-  it('sendPaymentRequestToAPI with 100 and 20', () => {
+  it('checks sendPaymentRequestToAPI with 100 and 20', () => {
     sendPaymentRequestToApi(100, 20);
-    expect(beforAfter.log.calledWith('The total is: 120')).to.be.true;
-    expect(beforAfter.log.calledOnce).to.be.true;
+    expect(console.log.calledWith('The total is: 120')).to.be.true;
+    expect(console.log.calledOnce).to.be.true;
   });
 
-  it('sendPaymentRequestToAPI with 10, and 10', () => {
+  it('checks sendPaymentRequestToAPI with 10, and 10', () => {
     sendPaymentRequestToApi(10, 10);
-    expect(beforAfter.log.calledWith('The total is: 20')).to.be.true;
-    expect(beforAfter.log.calledOnce).to.be.true;
+    expect(console.log.calledWith('The total is: 20')).to.be.true;
+    expect(console.log.calledOnce).to.be.true;
   });
 });
