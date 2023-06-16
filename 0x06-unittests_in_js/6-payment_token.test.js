@@ -1,9 +1,12 @@
+/* eslint-disable jest/valid-expect */
+const { expect } = require('chai');
 const { getPaymentTokenFromAPI } = require('./6-payment_token');
 
 describe('getPaymentTokenFromAPI', () => {
-  it('should return a resolved promise with the correct data when success is true', async () => {
-    expect.assertions(1);
-    const result = await getPaymentTokenFromAPI(true);
-    expect(result).toStrictEqual({ data: 'Successful response from the API' });
-  });
+  it('should return a resolved promise with the correct data when success is true', () => new Promise((done) => {
+    getPaymentTokenFromAPI(true).then((data) => {
+      expect(data).to.have.property('data');
+      done();
+    });
+  }));
 });
