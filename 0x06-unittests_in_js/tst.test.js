@@ -1,10 +1,19 @@
 const sinon = require('sinon');
+const assert = require('assert');
 
-// Create a stub
-const myStub = sinon.stub();
+let calls = 0;
+const obj = {
+  myFunction(data) {
+    return ++calls;
+  },
+};
 
-// Configure the stub's behavior
-myStub.returns('Stubbed response');
+const spy = sinon.spy(obj, 'myFunction');
 
-// Use the stub in your test
-console.log(myStub());// Output: 'Stubbed response'
+obj.myFunction('test');
+
+assert.equal(spy.getCall(0).args[0], 'test');
+
+// Returns 1, which means the real `myFunction()` was called,
+// rather than a stub.
+assert.equal(spy.getCall(0).returnValue, 1);
